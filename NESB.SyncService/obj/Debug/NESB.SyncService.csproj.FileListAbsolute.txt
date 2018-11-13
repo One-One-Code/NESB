@@ -1,0 +1,5 @@
+E:\code\git\NESB\NESB.SyncService\bin\Debug\NESB.SyncService.dll
+E:\code\git\NESB\NESB.SyncService\bin\Debug\NESB.SyncService.pdb
+E:\code\git\NESB\NESB.SyncService\obj\Debug\NESB.SyncService.csproj.CoreCompileInputs.cache
+E:\code\git\NESB\NESB.SyncService\obj\Debug\NESB.SyncService.dll
+E:\code\git\NESB\NESB.SyncService\obj\Debug\NESB.SyncService.pdb

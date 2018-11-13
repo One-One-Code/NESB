@@ -1,0 +1,6 @@
+E:\code\git\NESB\NESB.ServiceManage\bin\Debug\NESB.ServiceManage.dll
+E:\code\git\NESB\NESB.ServiceManage\bin\Debug\NESB.ServiceManage.pdb
+E:\code\git\NESB\NESB.ServiceManage\obj\Debug\NESB.ServiceManage.csprojAssemblyReference.cache
+E:\code\git\NESB\NESB.ServiceManage\obj\Debug\NESB.ServiceManage.csproj.CoreCompileInputs.cache
+E:\code\git\NESB\NESB.ServiceManage\obj\Debug\NESB.ServiceManage.dll
+E:\code\git\NESB\NESB.ServiceManage\obj\Debug\NESB.ServiceManage.pdb
