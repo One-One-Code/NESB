@@ -8,11 +8,27 @@ namespace NESB.SM.ZooKeeperCore
 {
     using ZooKeeperNet;
 
+    /// <summary>
+    /// 监视器
+    /// </summary>
     public class ZooKeeperWatcher : IWatcher
     {
+        private readonly ZooKeeperBus bus;
+        public ZooKeeperWatcher(ZooKeeperBus bus)
+        {
+            this.bus = bus;
+        }
+
+        /// <summary>
+        /// 监视器处理逻辑
+        /// </summary>
+        /// <param name="event"></param>
         public void Process(WatchedEvent @event)
         {
-            throw new NotImplementedException();
+            if (KeeperState.SyncConnected == @event.State)
+            {
+                this.bus.SetConnected();
+            }
         }
     }
 }
