@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\ServiceRegisterEvent.cs" />
     <Compile Include="MqCore\DefaultConsumeConfigurator.cs" />
     <Compile Include="MqCore\Event.cs" />
     <Compile Include="MqCore\EventConsumerBus.cs" />
@@ -84,8 +85,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consumer\" />
-    <Folder Include="Event\" />
+    <ProjectReference Include="..\NESB.Model\NESB.Model.csproj">
+      <Project>{3ec59d4b-2a31-4e1a-89cb-fed72e2ef73a}</Project>
+      <Name>NESB.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

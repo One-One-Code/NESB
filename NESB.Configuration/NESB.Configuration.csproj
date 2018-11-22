@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96DD9448-2C49-46B5-BF01-D3CBC5AB1D41}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>NESB.SyncService</RootNamespace>
-    <AssemblyName>NESB.SyncService</AssemblyName>
+    <ProjectGuid>{C350A41B-4348-4D49-B76C-8629DB43FF09}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NESB.Configuration</RootNamespace>
+    <AssemblyName>NESB.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="RuanYun.Caching">
+      <HintPath>..\packages\RuanYun.Caching.dll</HintPath>
     </Reference>
     <Reference Include="RuanYun.IoC">
       <HintPath>..\packages\RuanYun.IoC.dll</HintPath>
@@ -41,64 +46,24 @@
     <Reference Include="RuanYun.Logger">
       <HintPath>..\packages\RuanYun.Logger.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProjectInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ProjectInstaller.Designer.cs">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Service1.Designer.cs">
-      <DependentUpon>Service1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="LibraryAutoRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrapRegister.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Configs\logger.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ProjectInstaller.resx">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Configs\QueueConfigure.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NESB.Configuration\NESB.Configuration.csproj">
-      <Project>{c350a41b-4348-4d49-b76c-8629db43ff09}</Project>
-      <Name>NESB.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NESB.Model\NESB.Model.csproj">
-      <Project>{3ec59d4b-2a31-4e1a-89cb-fed72e2ef73a}</Project>
-      <Name>NESB.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NESB.MQ.Consumer\NESB.MQ.Consumer.csproj">
-      <Project>{05ffc09e-ea5c-4eba-8065-6e84170a6248}</Project>
-      <Name>NESB.MQ.Consumer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NESB.MQ\NESB.MQ.csproj">
       <Project>{62ac2346-5be4-4bce-8853-e3a31efefca6}</Project>
       <Name>NESB.MQ</Name>

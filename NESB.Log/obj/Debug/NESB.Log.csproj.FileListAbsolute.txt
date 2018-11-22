@@ -1,6 +1,0 @@
-E:\code\git\NESB\NESB.Log\bin\Debug\NESB.Log.dll
-E:\code\git\NESB\NESB.Log\bin\Debug\NESB.Log.pdb
-E:\code\git\NESB\NESB.Log\obj\Debug\NESB.Log.csproj.CoreCompileInputs.cache
-E:\code\git\NESB\NESB.Log\obj\Debug\NESB.Log.dll
-E:\code\git\NESB\NESB.Log\obj\Debug\NESB.Log.pdb
-E:\code\git\NESB\NESB.Log\obj\Debug\NESB.Log.csprojAssemblyReference.cache

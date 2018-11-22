@@ -121,8 +121,8 @@ namespace NESB.MQ.MqCore
 
         /// <summary>
         /// 添加consumer
-        // 消费者停止消费消息后，将异常抛出，让消息回滚至原队列中
-        // 等待下次处理
+        /// 消费者停止消费消息后，将异常抛出，让消息回滚至原队列中
+        /// 等待下次处理
         /// </summary>
         /// <typeparam name="TEvent">consumer的接收事件参数</typeparam>
         /// <typeparam name="TConsumer">consumer类型</typeparam>

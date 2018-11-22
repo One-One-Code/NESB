@@ -32,7 +32,8 @@ namespace NESB.MQ.MqCore
         /// 通过配置文件进行queue配置
         /// </summary>
         /// <param name="configFile"></param>
-        public static void QueueConfigure(string configFile)
+        /// <param name="consumerCount">消费者数量</param>
+        public static void QueueConfigure(string configFile, int consumerCount)
         {
             var hosts = GetSubscribeHost(configFile);
             if (hosts == null || hosts.Count == 0)
@@ -42,7 +43,7 @@ namespace NESB.MQ.MqCore
             {
                 reg.BusOnRabbitMq(
            config =>
-           config.SubscribeAt(subscribeHost.Host, subscribeHost.QueueName, 4, new DefaultConsumeConfigurator(reg, ServiceLocator.Current)));
+           config.SubscribeAt(subscribeHost.Host, subscribeHost.QueueName, consumerCount, new DefaultConsumeConfigurator(reg, ServiceLocator.Current)));
             }
         }
 
