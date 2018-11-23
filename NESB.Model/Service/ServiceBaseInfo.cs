@@ -9,7 +9,6 @@ namespace NESB.Model.Service
     using ProtoBuf;
 
     [ProtoContract]
-    [ProtoInclude(99,typeof(RestServiceInfo))]
     public class ServiceBaseInfo
     {
         /// <summary>
@@ -36,5 +35,28 @@ namespace NESB.Model.Service
         /// </summary>
         [ProtoMember(4)]
         public string Port { get; set; }
+
+        /// <summary>
+        /// 使用的协议
+        /// </summary>
+        [ProtoMember(5)]
+        public string Protocol { get; set; }
+
+        /// <summary>
+        /// 服务类型
+        /// </summary>
+        [ProtoMember(7)]
+        public ServiceType ServiceType { get; set; }
+
+        public bool Validate()
+        {
+            if (string.IsNullOrEmpty(ServiceName) || !System.Enum.IsDefined(typeof(ServiceType), ServiceType)
+                                                  || string.IsNullOrEmpty(Ip))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

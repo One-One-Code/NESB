@@ -15,7 +15,7 @@ namespace NESB.SM.ZooKeeperCore
     /// <summary>
     /// ZooKeeper服务相关操作类
     /// </summary>
-    public class ZooKeeperBus
+    public class ZooKeeperBus : IDisposable
     {
         /// <summary>
         /// ZooKeeper对象，注意Session超时时间 
@@ -80,7 +80,7 @@ namespace NESB.SM.ZooKeeperCore
             var stat = this.zooKeeper.Exists(path, true);
             if (stat == null)
             {
-                this.zooKeeper.Create(RootPath, null, Ids.OPEN_ACL_UNSAFE, CreateMode.Persistent);
+                this.zooKeeper.Create(path, null, Ids.OPEN_ACL_UNSAFE, CreateMode.Persistent);
             }
             this.zooKeeper.SetData(path, bytes, -1);
         }
@@ -122,6 +122,17 @@ namespace NESB.SM.ZooKeeperCore
                 ms.Position = 0;
                 return ms.ToArray();
             }
+        }
+
+        public void Dispose()
+        {
+            this.zooKeeper.Dispose();
+            
+        }
+
+        ~ZooKeeperBus()
+        {
+            this.zooKeeper.Dispose();
         }
     }
 }

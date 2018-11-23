@@ -66,6 +66,10 @@
       <Project>{62ac2346-5be4-4bce-8853-e3a31efefca6}</Project>
       <Name>NESB.MQ</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NESB.ServiceManage\NESB.SM.csproj">
+      <Project>{25e19cf5-b52d-4d95-8d0f-047fcbb2f2f3}</Project>
+      <Name>NESB.SM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
