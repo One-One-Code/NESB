@@ -50,12 +50,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ZooKeeperCore\DistributedLock.cs" />
     <Compile Include="ZooKeeperCore\ZooKeeperBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZooKeeperCore\ZooKeeperWatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LoadBalancing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
