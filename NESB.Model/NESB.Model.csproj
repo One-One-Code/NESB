@@ -44,9 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ServiceRegisterTypeEnum.cs" />
     <Compile Include="Enum\SwitchEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\RestServiceInfo.cs" />
     <Compile Include="Service\ServiceBaseInfo.cs" />
     <Compile Include="Service\ServiceType.cs" />
   </ItemGroup>
