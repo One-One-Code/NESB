@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceManage.cs" />
     <Compile Include="ZooKeeperCore\DistributedLock.cs" />
     <Compile Include="ZooKeeperCore\ZooKeeperBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LoadBalancing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NESB.Model\NESB.Model.csproj">
+      <Project>{3ec59d4b-2a31-4e1a-89cb-fed72e2ef73a}</Project>
+      <Name>NESB.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

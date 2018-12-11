@@ -98,7 +98,7 @@ namespace NESB.SM.ZooKeeperCore
         /// <param name="key"></param>
         /// <param name="obj"></param>
         /// <param name="lockTimeOut">获取锁的等待时间，单位秒</param>
-        public void SetDataWithLock<T>(string key, T obj, int lockTimeOut)
+        public void SetDataWithLock<T>(string key, T obj, int lockTimeOut = 3)
         {
             var distributeKeeper = new DistributedLock(this.zooKeeper);
             bool getLock = false;

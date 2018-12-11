@@ -38,7 +38,6 @@ namespace NESB.SyncService
         public void Debug()
         {
             this.InitSetting();
-            //ServiceLocator.Current.GetInstance<IEventPublisher>().Publish(new ServiceRegisterEvent{Info = new ServiceBaseInfo(){HostName = "pc-1",Ip = "10.0.3.5",ServiceType = ServiceType.Rest,ServiceName = "User.getuser"}});
         }
 
         /// <summary>

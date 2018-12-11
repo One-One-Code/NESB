@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace NESB.Model.Service
 {
+    using NESB.Model.Enum;
+
     using ProtoBuf;
 
     [ProtoContract]
@@ -48,10 +50,22 @@ namespace NESB.Model.Service
         [ProtoMember(7)]
         public ServiceType ServiceType { get; set; }
 
+        /// <summary>
+        /// 接口请求类型
+        /// </summary>
+        [ProtoMember(8)]
+        public RequestTypeEnum RequestType { get; set; }
+
+        /// <summary>
+        /// 接口地址
+        /// </summary>
+        [ProtoMember(9)]
+        public string Source { get; set; }
+
         public bool Validate()
         {
             if (string.IsNullOrEmpty(ServiceName) || !System.Enum.IsDefined(typeof(ServiceType), ServiceType)
-                                                  || string.IsNullOrEmpty(Ip))
+                                                  || string.IsNullOrEmpty(Ip) || string.IsNullOrEmpty(Source))
             {
                 return false;
             }

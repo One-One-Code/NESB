@@ -12,6 +12,7 @@ namespace NESB.MQ.Consumer.ConsumerProcess
     using NESB.Model.Service;
     using NESB.MQ.Event;
     using NESB.MQ.MqCore;
+    using NESB.SM;
     using NESB.SM.ZooKeeperCore;
 
     using RuanYun.Logger;
@@ -37,25 +38,7 @@ namespace NESB.MQ.Consumer.ConsumerProcess
                 Log.Write(string.Format("服务注册消费消息异常，服务信息不完整,info:{0}", JsonConvert.SerializeObject(eEvent.Info)), MessageType.Warn);
                 return;
             }
-            using (var bus = new ZooKeeperBus())
-            {
-                var services = bus.GetData<List<ServiceBaseInfo>>(eEvent.Info.ServiceName) ?? new List<ServiceBaseInfo>();
-                var item = services.FirstOrDefault(p => p.Ip.Equals(eEvent.Info.Ip));
-                if (item != null)
-                {
-                    services.Remove(item);
-                }
-                switch (eEvent.RegisterType)
-                {
-                    case ServiceRegisterTypeEnum.Add:
-                    case ServiceRegisterTypeEnum.Update:
-                        services.Add(eEvent.Info);
-                        break;
-                    case ServiceRegisterTypeEnum.Remove:
-                        break;
-                }
-                bus.SetData(eEvent.Info.ServiceName, services);
-            }
+            ServiceManage.RegisterService(eEvent.Info, eEvent.RegisterType);
         }
     }
 }

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NESB.MQ.Consumer", "NESB.MQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NESB.Configuration", "NESB.Configuration\NESB.Configuration.csproj", "{C350A41B-4348-4D49-B76C-8629DB43FF09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{DEE718D3-E303-4525-8540-CD16BE0569F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C350A41B-4348-4D49-B76C-8629DB43FF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C350A41B-4348-4D49-B76C-8629DB43FF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C350A41B-4348-4D49-B76C-8629DB43FF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE718D3-E303-4525-8540-CD16BE0569F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE718D3-E303-4525-8540-CD16BE0569F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE718D3-E303-4525-8540-CD16BE0569F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE718D3-E303-4525-8540-CD16BE0569F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
